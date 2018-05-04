@@ -8,7 +8,7 @@ const productRoutes = require("./api/routes/products");
 //         message: "It Works"
 //     })
 // });
-console.log("test");
+
 app.use("/products", productRoutes);
 
 module.exports = app;
