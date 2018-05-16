@@ -18,17 +18,19 @@ async function send(){
 
     // Register Push
     console.log("Register Push...");
+    
     const subscription = await register.pushManager.subscribe({
 
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
     });
+
     console.log("Push Registered...");
 
     // Send Push Notification
     console.log("Sending Push...");
-    await fetch("/subscribe", {
 
+    await fetch("/subscribe", {
         method: "POST",
         body: JSON.stringify(subscription),
         headers: {
